@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './LoveLetter.css';
 import audioFile from './kushi.mp3';
+import left_img from './left_img.jpg';
 
 const LoveLetter = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,17 +32,26 @@ const LoveLetter = () => {
   };
 
   return (
-    <div className={`envelope ${isOpen ? 'open' : ''}`} onClick={!isFullSize ? handleOpenLetter : handleCloseLetter}>
-      <div className="flap"></div>
-      <div className="body"></div>
-      <div className={`letter ${isFullSize ? 'fullSize' : ''}`}>
-        mah dear kundanapu bomma🖤,<br />
-        never have i been so blessed as to fall in love with someone as wonderful as you...<br />i loveeee youuuu :)<br />
-        always yours,<br />
-        @niihaaarrrr
-      </div>
-      <audio ref={audioRef} src={audioFile} onError={(e) => console.error('Audio error:', e.message)} />
+    <div className='mainDiv'>
+      <img className={ `${isOpen ? 'imgOpen' : 'leftImg'}`} src={left_img} />
+      <div className={`envelope ${isOpen ? 'open' : ''}`} onClick={!isFullSize ? handleOpenLetter : handleCloseLetter}>
+
+    <div className="flap"></div>
+    <div className="body"></div>
+    <div className={`letter ${isFullSize ? 'fullSize' : ''}`}>
+      My dear Little Princess<br />
+      Naa bangaru thalli Happy birthday to youuuu nanna<br />
+      I would like to say one powerful mantra chant everyday<br />
+      Hare Krishna Hare Krishna<br />
+      Krishna Krishna Hare Hare<br />
+      Hare Rama Hare Rama<br />
+      Rama Rama Hare Hare<br />
+      Lots of love and hears form Missu Pinni & Preethi Pinni
     </div>
+    <audio ref={audioRef} src={audioFile} onError={(e) => console.error('Audio error:', e.message)} />
+  </div>
+</div>
+
   );
 };
 
