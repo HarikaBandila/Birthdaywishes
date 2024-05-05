@@ -11,7 +11,8 @@
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.8s ease;
-    left:100px
+    left:100px;
+    overflow:auto
   }
   
   .flap {
@@ -60,6 +61,7 @@
     padding: 20px;
     box-sizing: border-box;
     text-align: justify;
+    overflow:auto
   }
   
   .open .flap {
@@ -80,11 +82,6 @@
   }
   
   .leftImg {
-    position: relative;
-    height: 600px;
-    width: 280px;
-    top: 50px;
-    left: 200px;
     display: none
   }
 
@@ -99,5 +96,30 @@
   width: 280px;
   top: 50px;
   left: 200px;
-  display: block;
+  display: flex;
 }
+
+
+
+@media screen and (max-width: 720px){
+  .mainDiv{
+    flex-direction: column;
+    gap:20px
+  }
+
+  .envelope {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 50px auto;
+    cursor: pointer;
+    perspective: 1000px;
+    background-color: #3087ac;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.8s ease;
+    left:0px;
+    overflow:auto
+  }
+}
+
